@@ -47,7 +47,7 @@ class TestViews(TestCase):
 
 		self.assertEqual(response.status_code,302)
 		self.assertEqual(self.project1.expenses.first().title, 'expense1')
-		#self.assertEquals(self.project1.expenses.first().title, 'expense2')
+		#self.assertEqual(self.project1.expenses.first().title, 'expense2')
 
 
 	def test_project_detail_POST_no_data(self):

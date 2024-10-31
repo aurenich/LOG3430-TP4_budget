@@ -31,6 +31,8 @@ def replace_assert_equals():
 # Démarrer git bisect
 os.system(f"git bisect start {badhash} {goodhash}")
 
+replace_assert_equals()
+
 # Exécuter le test avec git bisect
 result = os.system("git bisect run pytest")  # ou votre commande de test
 if result != 0:
