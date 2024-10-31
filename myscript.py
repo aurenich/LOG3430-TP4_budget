@@ -9,7 +9,10 @@ goodhash = sys.argv[2] if len(sys.argv) > 2 else "e4cfc6f77ebbe2e23550ddab682316
 os.system(f"git bisect start {badhash} {goodhash}")
 
 # Exécuter le test avec git bisect
-os.system("git bisect run pytest")  # ou votre commande de test, ex: "python manage.py test"
-
+result = os.system("git bisect run pytest")  # ou votre commande de test
+if result != 0:
+    print("Tests failed.")
+    os.system("git bisect reset")
+    sys.exit(result)
 # Terminer git bisect
 os.system("git bisect reset")
