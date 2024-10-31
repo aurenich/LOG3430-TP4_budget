@@ -10,7 +10,7 @@ badhash = sys.argv[1] if len(sys.argv) > 1 else "c1a4be04b972b6c17db242fc37752ad
 goodhash = sys.argv[2] if len(sys.argv) > 2 else "e4cfc6f77ebbe2e23550ddab682316ab4ce1c03c"
 
 def replace_assert_equals():
-    test_directory = '/tests'  # Update this to your test directory
+    test_directory = 'budget/tests'  # Update this to your test directory
     for dirpath, _, filenames in os.walk(test_directory):
         for filename in filenames:
             if filename.endswith('.py'):  # Only process Python files
