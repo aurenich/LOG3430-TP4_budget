@@ -1,9 +1,9 @@
 from django.test import TestCase
 from budget.models import Project, Category, Expense
 import os
+import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
-import django
 django.setup()
 
 

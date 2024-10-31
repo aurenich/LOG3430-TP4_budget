@@ -2,9 +2,9 @@ from django.test import SimpleTestCase
 from django.urls import reverse,resolve
 import os
 from budget.views import project_list,project_detail,ProjectCreateView
+import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
-import django
 django.setup()
 
 class TestUrls(SimpleTestCase):

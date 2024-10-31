@@ -3,9 +3,9 @@ from django.urls import reverse
 from budget.models import Project, Category, Expense
 import os
 import json
+import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
-import django
 django.setup()
 
 class TestViews(TestCase):
@@ -17,7 +17,6 @@ class TestViews(TestCase):
 		self.project1 = Project.objects.create(
         	name = 'project1',
         	budget = 10000
-
         	)
 
 	def test_project_list_GET(self):

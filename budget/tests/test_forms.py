@@ -1,9 +1,9 @@
 from django.test import SimpleTestCase
 from budget.forms import ExpenseForm
 import os
+import django
 
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
-import django
 django.setup()
 
 
