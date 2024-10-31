@@ -13,6 +13,8 @@ jobs:
         python-version: "3.9"
     - name: Install packages
       run: pip install -r requirements.txt
+    - name: Set environment variable for Django settings
+      run: echo "DJANGO_SETTINGS_MODULE=budgetproject.settings" >> $GITHUB_ENV
     - name: Run git bisect with myscript.py
       run: python myscript.py
 
