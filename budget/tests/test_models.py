@@ -1,5 +1,11 @@
 from django.test import TestCase
 from budget.models import Project, Category, Expense
+import os
+import django
+
+# Set the Django settings module
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
+django.setup()
 
 
 class TestModels(TestCase):
@@ -11,7 +17,7 @@ class TestModels(TestCase):
 		)
 
 	def test_project_is_assigned_slug_on_creation(self):
-		self.assertEquals(self.project1.slug, 'project-1')
+		self.assertEqual(self.project1.slug, 'project-1')
 		#self.assertEquals(self.project1.slug, 'project+1')
 
 
@@ -37,7 +43,7 @@ class TestModels(TestCase):
 
 		)
 
-		self.assertEquals(self.project1.budget_left, 7000)
+		self.assertEqual(self.project1.budget_left, 7000)
 		#self.assertEquals(self.project1.budget_left, 8000)
 
 		
