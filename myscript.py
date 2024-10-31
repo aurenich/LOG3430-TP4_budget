@@ -27,11 +27,15 @@ def replace_assert_equals():
                         file.write(updated_content)
                     print(f"Updated {filepath}: replaced assertEquals with assertEqual")
 
+def commit_changes():
+    os.system('git add .')  # Stage all changes
+    os.system('git commit -m "Updated test files to replace assertEquals with assertEqual"')
 
 # Démarrer git bisect
 os.system(f"git bisect start {badhash} {goodhash}")
 
 replace_assert_equals()
+commit_changes()
 
 # Exécuter le test avec git bisect
 result = os.system("git bisect run pytest")  # ou votre commande de test
