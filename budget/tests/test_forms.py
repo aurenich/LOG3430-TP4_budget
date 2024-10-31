@@ -1,5 +1,10 @@
 from django.test import SimpleTestCase
 from budget.forms import ExpenseForm
+import os
+
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'budgetproject.settings')
+import django
+django.setup()
 
 
 class TestForms(SimpleTestCase):
@@ -19,4 +24,4 @@ class TestForms(SimpleTestCase):
 
 
 		self.assertFalse(form.is_valid())
-		self.assertEquals(len(form.errors), 3)
+		self.assertEqual(len(form.errors), 3)
